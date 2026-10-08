@@ -1,0 +1,38 @@
+# JEWEL 2.6.0 -- vacuum reference for AuAu 200 GeV (jewel-2.6.0-vac).
+# @...@ fields are filled per job by scripts/run_jewel.sh; everything else is
+# the physics of this config. Changing any physics line invalidates this
+# config's cached tables (scripts/make_tables.sh will tell you).
+LOGFILE @LOGFILE@
+HEPMCFILE @HEPMCFILE@
+NJOB @NJOB@
+NEVENT @NEVENT@
+
+# --- collision system ------------------------------------------------------
+SQRTS 200
+# EPPS16nlo_CT14nlo_Au197 (isospin-averaged Au nPDF), same as the medium
+# config, so vacuum and medium differ only by the medium.
+PDFSET 901200
+MASS 197
+NPROTON 79
+
+# --- hard-scattering phase space -------------------------------------------
+# PTMIN/PTMAX bound the parton-level pT-hat of the 2->2 scattering (PTMAX -1 =
+# no upper limit). PTMIN 16 is the genesis value: below a 20 GeV jet threshold
+# so jets near it are fully populated. No jet-level cut is applied downstream.
+# Hard scatterings are generated at
+# ALL rapidities. ETAMAX does not cut them. Instead it sets the medium's
+# extent (|space-time rapidity| < ETAMAX), and JEWEL does not shower partons
+# beyond |eta| > ETAMAX+1. 2.0 leaves a margin around the jet acceptance
+# (|eta| < 0.7, R = 0.4 -> 1.1) so jets and their wide-angle radiation at the
+# acceptance edge still see the medium.
+PTMIN 16.
+PTMAX -1.
+ETAMAX 2.0
+
+# --- event weighting -------------------------------------------------------
+# Weighted generation: pT-hat is sampled with an extra pT^WEXPO factor, and
+# each event carries a compensating weight (first weight on the HepMC "E"
+# line). Physical spectra REQUIRE applying the weights. Set WEIGHTED F for
+# unweighted events.
+WEIGHTED T
+WEXPO 8

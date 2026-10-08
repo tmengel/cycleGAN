@@ -1,0 +1,21 @@
+# JEWEL 2.6.0 simple-medium parameters: AuAu 200 GeV, 0-10% central.
+# Every parameter medium-simple.f reads is set here explicitly. 2.6.0 changed
+# the built-in defaults to 5 TeV values (TI 0.59, MDSCALEFAC 1), so nothing
+# should be left implicit. The nucleus (A=197) comes from MASS in the main
+# params file; medium-simple.f has no "A" key.
+CENTRMIN 0.
+CENTRMAX 10.
+# Initial time [fm] and initial temperature [GeV] at the centre of a central
+# collision. TI is the main quenching knob. 0.375 GeV is the value used for
+# the genesis production. For reference, the pre-2.6 JEWEL RHIC setting
+# (TAUI 0.6, TI 0.36) Bjorken-scales to TI ~0.41 at TAUI 0.4.
+TAUI 0.4
+TI 0.375
+TC 0.17
+# Inelastic NN cross section [fm^2]: 4.2 fm^2 = 42 mb at 200 GeV.
+SIGMANN 4.2
+WOODSSAXON T
+NF 3
+# Debye mass m_D = max(MDSCALEFAC * 3T, MDFACTOR)
+MDFACTOR 0.45
+MDSCALEFAC 1.
