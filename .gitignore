@@ -1,28 +1,33 @@
-# Whitelist: only the code needed to produce the v3 dataset (JEWEL 2.6.0 hepmc + Fun4All two-pass).
-# code/ (genesis-era pipeline, its own local git repo) and MDC2/ (fork of sPHENIX MDC2) are
-# deliberately left out, as are data, slides and build products.
+# Whitelist: the code used to produce and QA the v3 dataset (JEWEL 2.6.0 hepmc + Fun4All two-pass).
+# Slides and build products are left out.
 /*
 !/.gitignore
 !/README.md
 !/jewel/
 !/fun4all/
+!/qa/
 
 # jewel: generated/downloaded by install.sh and scripts/make_tables.sh
 /jewel/src/
 /jewel/bin/
 /jewel/pdfsets/
 /jewel/configs/*/tables/
-/jewel/validation/
-/jewel/reference_luis/
 
-# fun4all: build products (install.sh) and validation
+# fun4all: build products (install.sh)
 /fun4all/build/
 /fun4all/install/
-/fun4all/validation/
 /fun4all/src/jeweltreewriter/autom4te.cache/
 /fun4all/src/jeweltreewriter/aclocal.m4
 /fun4all/src/jeweltreewriter/configure
 /fun4all/src/jeweltreewriter/Makefile.in
+
+# QA outputs and binaries
+/qa/jewel/jetqa
+/qa/v3_plots/data/
+/qa/genesis/*/
+*.root
+*.png
+*.pdf
 
 # ROOT ACLiC products
 *_C.d

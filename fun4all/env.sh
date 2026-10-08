@@ -2,7 +2,7 @@
 #   source /sphenix/user/tmengel/cycleGAN/fun4all/env.sh
 #
 # Pinned to a frozen sPHENIX release, never the floating "new" nightly: a nightly once broke
-# RetowerCEMC with no change on our side (see RUNNING.md / jewel-tree-build-pin history).
+# RetowerCEMC with no change on our side.
 
 export F4A_ROOT=/sphenix/user/tmengel/cycleGAN/fun4all
 export F4A_RELEASE=ana.572

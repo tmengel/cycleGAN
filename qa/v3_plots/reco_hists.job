@@ -1,0 +1,11 @@
+universe            = vanilla
+executable          = /sphenix/user/tmengel/cycleGAN/qa/v3_plots/run_reco_hists.sh
+transfer_executable = False
+arguments           = $(sample) $(run) $(first) $(last) $(out)
+output              = /sphenix/user/tmengel/cycleGAN/qa/v3_plots/data/logs/$(sample)_$(first).out
+error               = /sphenix/user/tmengel/cycleGAN/qa/v3_plots/data/logs/$(sample)_$(first).err
+log                 = /tmp/tmengel_slides_reco_hists.log
+request_memory      = 1500MB
+priority            = 10
+notification        = Never
+queue sample, run, first, last, out from /sphenix/user/tmengel/cycleGAN/qa/v3_plots/reco_jobs.list

@@ -19,8 +19,7 @@ jewel/
 │   └── merge_hepmc.sh  concatenate per-job files into one HepMC file
 ├── filter/jetFilter.cc optional anti-kT event filter
 ├── seeds.ledger        every NJOB (seed) range ever submitted
-├── src/ bin/ pdfsets/  build products
-└── reference_luis/     Luis's original params + filter (untouched, for comparison)
+└── src/ bin/ pdfsets/  build products
 ```
 
 ## Quick start
@@ -123,11 +122,11 @@ to `pdfsets/`), `MASS 197 NPROTON 79`, `PTMIN 16 PTMAX -1` (parton pT-hat, no up
 
 ## Validation against Luis's genesis sample (2026-10-01)
 
-`validation/run_compare.sh <new_vacuum.hepmc> <new_medium.hepmc> <outdir>`
+`../qa/jewel/run_compare.sh <new_vacuum.hepmc> <new_medium.hepmc> <outdir>`
 compares the first 100k events of a production with Luis's genesis files. It
 applies the genesis selection (leading R=0.4 jet, |eta|<0.7, pT>20) to both and
-writes `compare.pdf` plus a summary table. Results for `pthat16` are in
-`validation/compare_luis/`:
+writes `compare.pdf` plus a summary table. Results for `pthat16` (plots in
+`/sphenix/tg/tg01/jets/tmengel/JEWEL_pp200_signal/v3_2026-10-03/qa/generator_vs_genesis/`):
 
 * vacuum: all observables agree (pass rate 51.5% vs 51.5%; leading-jet pT,
   eta, mass, girth, z, radial profile, multiplicities, weights: chi2/ndf

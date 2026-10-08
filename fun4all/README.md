@@ -72,7 +72,7 @@ they fix the random seeds.
   nightly once broke RetowerCEMC with no change of ours). CDB global tag `MDC2_ana.435` (as the
   genesis production), override with `F4A_CDBTAG`.
 
-## What the passes do, and what changed from `../code/` (the genesis-era macros)
+## What the passes do, and what changed from the genesis-era macros (`code/`, since removed)
 
 **Pass 1** (`Fun4All_G4_pass1.C`, from `code/pass1/Fun4All_G4_JEWEL_pass1.C`): HepMC input with
 the sPHENIX beam parameters, then GEANT4 with beam pipe, MBD, EPD, EMCal, iHCal, magnet,
@@ -110,7 +110,7 @@ and yeonjugo's `draw_event_v2.C`):
   and truth jets >= 10 GeV with constituents; reco constituents carry their calorimeter,
   truth ones energy and PDG id) and `globaltree` (vertex). The branch layout is documented in
   `src/jeweltreewriter/JewelTreeWriter.h` and is unchanged, so the existing QA macros in
-  `../code/qa` read these trees.
+  `../qa/genesis` read these trees.
 * `make_images.C`: identical images to `draw_event_v2.C` (24 x 64, eta [-1.1, 1.1], phi
   [0, 2 pi], EMCal + iHCal + oHCal energy, negatives clipped, histograms named
   `h_eta_phi_cent0_file<seg>_evt<i>`), with explicit paths. Image i = entry i of the trees.
